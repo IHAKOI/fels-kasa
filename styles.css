@@ -1,0 +1,243 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+body {
+  margin: 0; 
+  background: #121212; 
+  color: #fff; 
+  font-family: 'Montserrat', sans-serif;
+  display: flex; 
+  height: 100vh; 
+  overflow: hidden;
+}
+
+/* Masa Listesi */
+#tables {
+  width: 200px;
+  background: #1E1E1E;
+  padding: 40px 20px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: flex-start;
+  overflow-y: auto;
+  max-height: 200vh;
+}
+.table {
+  background: #222;
+  border-radius: 12px;
+  width: 160px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 20px;
+  user-select: none;
+  transition: background-color 0.5s;
+}
+.table.active, .table:hover {
+  background: #fdb912;
+  color: #121212;
+}
+.table.has-order:not(.active) {
+  background-color: #4caf50;
+  color: #fff;
+}
+
+/* Sipariş Paneli */
+#order-panel {
+  flex: 1;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  background: #181818;
+  box-sizing: border-box;
+}
+#order-title {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: #fdb912;
+}
+#order-list {
+  flex: 1;
+  background: #222;
+  border-radius: 12px;
+  padding: 15px;
+  overflow-y: auto;
+  margin-bottom: 15px;
+      background-image: url('felsseffafs.png'); /* PNG dosyanızın yolu */
+    background-size: 80% auto;
+    background-repeat: no-repeat; /* Tekrar etmesini engeller */
+    background-position: center; /* Ortalar */
+}
+.order-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #333;
+}
+.order-item span {
+  font-size: 18px;
+}
+.order-controls button {
+  background: #fdb912;
+  border: none;
+  color: #121212;
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  font-weight: 700;
+  cursor: pointer;
+  margin-left: 6px;
+  transition: background-color 0.3s;
+}
+.order-controls button:hover {
+  background: #d9a80e;
+}
+#total-price {
+  font-size: 24px;
+  font-weight: 700;
+  text-align: right;
+  color: #fdb912;
+  margin-bottom: 15px;
+}
+#pay-btn {
+  background: #fdb912;
+  border: none;
+  color: #121212;
+  padding: 15px;
+  font-weight: 700;
+  font-size: 20px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+#pay-btn:disabled {
+  background: #555;
+  cursor: default;
+}
+#pay-btn:hover:not(:disabled) {
+  background: #d9a80e;
+}
+
+/* Menü Paneli */
+#menu-panel {
+  width: 600px;
+  background: #1E1E1E;
+  padding: 20px;
+  box-sizing: border-box;
+  overflow-y: auto;
+}
+#menu-categories {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 15px;
+}
+.category-btn {
+  background: #333;
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.3s;
+}
+.category-btn.active, .category-btn:hover {
+  background: #fdb912;
+  color: #121212;
+}
+#menu-items {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.menu-item {
+  background: #222;
+  padding: 12px 15px;
+  border-radius: 12px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 18px;
+  font-weight: 600;
+  transition: background-color 0.3s;
+}
+.menu-item:hover {
+  background: #fdb912;
+  color: #121212;
+}
+
+/* Telefonlar için */
+@media (max-width: 768px) {
+  body {
+    flex-direction: column;
+    overflow-y: auto;
+  }
+
+  #tables {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+    padding: 10px;
+    gap: 10px;
+  }
+  .table {
+    flex: 0 0 100px; /* telefon ekranına sığacak şekilde küçült */
+    height: 50px;
+    font-size: 16px;
+  }
+
+  #order-panel {
+    padding: 15px;
+  }
+  #order-title {
+    font-size: 22px;
+  }
+  #order-list {
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+  .order-item span {
+    font-size: 16px;
+  }
+  .order-controls button {
+    width: 24px;
+    height: 24px;
+    margin-left: 4px;
+  }
+  #total-price {
+    font-size: 20px;
+  }
+  #pay-btn {
+    font-size: 18px;
+    padding: 12px;
+  }
+
+  #menu-panel {
+    width: 100%;
+    padding: 10px;
+  }
+  #menu-categories {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .category-btn {
+    padding: 8px 10px;
+    font-size: 14px;
+  }
+  #menu-items {
+    gap: 8px;
+  }
+  .menu-item {
+    padding: 10px;
+    font-size: 16px;
+  }
+}

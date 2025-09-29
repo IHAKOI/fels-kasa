@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Fel's Burger Kasa Ekranı</title>
+<link rel="icon" type="image/png" href="felsyazı.png" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<div id="tables">
+  <!-- Masa butonları JS ile gelecek -->
+</div>
+
+<div id="order-panel">
+  <div id="order-title">Masa Seçiniz</div>
+  <div id="order-list"></div>
+  <div id="total-price">Toplam: 0 TL</div>
+  <button id="pay-btn" disabled>Sipariş Ödendi</button>
+</div>
+
+<div id="menu-panel">
+  <div id="menu-categories">
+    <button class="category-btn active" data-cat="burger">Burgerler</button>
+    <button class="category-btn" data-cat="menüler">Menüler</button>
+    <button class="category-btn" data-cat="köfte">Köfte Tabağı</button>
+    <button class="category-btn" data-cat="ekmek">Ekmek Arası</button>
+    <button class="category-btn" data-cat="snack">Atıştırmalıklar</button>
+    <button class="category-btn" data-cat="drink">İçecekler</button>
+  </div>
+  <div id="menu-items"></div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
